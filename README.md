@@ -49,8 +49,8 @@ Sub Button1_Click
 End Sub
 ```
 ## Demo
-Download/Clone [https://github.com/claudeamadu/flutterwave-b4a/tree/main/Demo](https://github.com/claudeamadu/flutterwave-b4a/tree/main/Demo)
-<br/><img src="./phone0.jpeg" width="20%"></img> <img src="./phone1.jpeg" width="20%"></img> <img src="./phone2.jpeg" width="20%"></img> <img src="./phone3.jpeg" width="20%"> <img src="./phone4.jpeg" width="20%"></img> 
+Download/Clone [https://github.com/claudeamadu/flutterwave-b4a/tree/master/Demo](https://github.com/claudeamadu/flutterwave-b4a/tree/master/Demo)
+<br/><img src="./phone0.jpeg" width="15%"></img> <img src="./phone1.jpeg" width="15%"></img> <img src="./phone2.jpeg" width="15%"></img> <img src="./phone3.jpeg" width="15%"> <img src="./phone4.jpeg" width="15%"></img> 
 
 ## Security
 
