@@ -50,7 +50,7 @@ End Sub
 ```
 ## Demo
 Download/Clone [https://github.com/claudeamadu/flutterwave-b4a/tree/main/Demo](https://github.com/claudeamadu/flutterwave-b4a/tree/main/Demo)
-<br/><img src="./phone0.jpeg" width="20%"></img> <img src="./phone1.jpeg" width="20%"></img> <img src="./phone2.jpeg" width="20%"></img> <img src="./phone3.jpeg" width="20%"> <img src="./phone4.jpg" width="20%"></img> 
+<br/><img src="./phone0.jpeg" width="20%"></img> <img src="./phone1.jpeg" width="20%"></img> <img src="./phone2.jpeg" width="20%"></img> <img src="./phone3.jpeg" width="20%"> <img src="./phone4.jpeg" width="20%"></img> 
 
 ## Security
 
