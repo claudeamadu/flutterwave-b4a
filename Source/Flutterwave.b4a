@@ -1,0 +1,96 @@
+﻿Build1=Default,b4a.flutterwave
+File1=flutterwave-logo.png
+File2=index.html
+File3=Layout.bal
+FileGroup1=Default Group
+FileGroup2=Default Group
+FileGroup3=Default Group
+Group=Default Group
+Library1=cookiemanager
+Library10=xui
+Library11=shapedrawable
+Library2=core
+Library3=ime
+Library4=javaobject
+Library5=okhttp
+Library6=okhttputils2
+Library7=phone
+Library8=reflection
+Library9=webviewextras2
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="29"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~AddApplicationText(~\n~<meta-data~\n~    android:name="co.paystack.android.PublicKey"~\n~    android:value="pk_test_83d0bdbb2262880d8b9786136a0c9941959c498d"/>~\n~)
+Module1=Flutterwave
+Module2=JarFileLoader
+Module3=Starter
+NumberOfFiles=3
+NumberOfLibraries=11
+NumberOfModules=3
+Version=11.2
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: Flutterwave Example
+	#VersionCode: 1
+	#VersionName: 1.20
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: unspecified
+	#CanInstallToExternalStorage: False
+	#BridgeLogger:True
+	
+	#LibraryAuthor: Claude Obiri Amadu
+	#LibraryName:Flutterwave
+	#LibraryVersion:1.25
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: True
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'These variables can be accessed from all modules.
+	Private xui As XUI
+End Sub
+
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+	Dim Pay As Flutterwave
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	Activity.LoadLayout("Layout")
+	Pay.Initialize("Pay","FLWPUBK_TEST-SANDBOXDEMOKEY-X",Me,Activity,True)
+End Sub
+
+Private Sub Pay_TransactionResponse(Reference As String,Response As String)
+	Log("REFERENCE: "&Reference)
+	Log("RESPONSE: "&Response)
+End Sub
+
+Private Sub Pay_TransactionStatus(Reference As String,Status As String)
+	Log("REFERENCE: "&Reference)
+	Log("STATUS: "&Status)
+End Sub
+
+Private Sub Pay_Ready(Status As String)
+	Log("READY: "&Status)
+End Sub
+
+Sub Activity_Resume
+
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+Sub Activity_KeyPress (KeyCode As Int) As Boolean 'Return True to consume the event
+	If KeyCode = KeyCodes.KEYCODE_BACK Then
+'		Pay.CancelPayment
+	End If
+	Return False
+End Sub
+
+Sub Button1_Click
+	Dim Ref As Int = Rnd(1000,9999)
+	Pay.InitializeTransaction("obiriclaude@gmail.com","0558382705","Claude Obiri Amadu", 11,"test-"&Ref,"Label","TEST",Pay.CURRENCY_GHS,"")
+End Sub

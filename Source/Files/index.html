@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+	<title>Flutterwave</title>
+	<script src="https://checkout.flutterwave.com/v3.js"></script>
+	<script>
+		function setCookie(cname, cvalue, exdays) {
+		  const d = new Date();
+		  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+		  let expires = "expires="+ d.toUTCString();
+		  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+		}
+		setCookie('SameSite', 'Secure', 1);
+	</script>
+</head>
+<body style="margin:10px;">
+	<script>  
+	function Pay(key,email,phone_number,name,amount,ref,label,description,currency,logo){
+	    const modal = FlutterwaveCheckout({
+	      public_key: key,
+	      tx_ref: ref+Math.floor((Math.random() * 1000000000) + 1),
+	      amount: amount,
+	      currency: currency,
+	      payment_options: "card, banktransfer, ussd, mobilemoneyghana, barter",
+	      callback: function(payment) {
+	        // Send AJAX verification request to backend
+			console.log(payment);
+	        verifyTransactionOnBackend(payment.status);
+	      },
+	      onclose: function(incomplete) {
+	        if (incomplete || window.verified === false) {
+	          B4A.CallSub("Message",true,"Flutterwave","Payment Cancelled","cancelled");
+	        }else {
+				if (window.verified == true){
+					B4A.CallSub("Message",true,"Flutterwave","Payment of "+currency+amount+" Successul","success");
+				} else {
+					B4A.CallSub("Message",true,"Flutterwave","Payment pending","pending");
+				}
+	        }
+	      },
+	      customer: {
+	        email: email,
+	        phone_number: phone_number,
+	        name: name,
+	      },
+	      customizations: {
+	        title: label,
+	        description: description,
+	        logo: logo,
+	      },
+	    });
+	  }
+	  function verifyTransactionOnBackend(status) {
+		if(status == "successful"){
+			window.verified = true;
+		}else{
+			window.verified = false;
+		}
+	    B4A.CallSub("Message",true,"Flutterwave","Payment "+status,status);
+	  }
+	  var ref = 123
+	  Pay("FLWPUBK_TEST-SANDBOXDEMOKEY-X","obiriclaude@gmail.com","0558382705","Claude Obiri Amadu", 11,"test-"+ref,"Label","TEST","GHS","")
+	</script>
+</body>
+</html>
