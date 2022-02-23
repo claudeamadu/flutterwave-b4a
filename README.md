@@ -49,7 +49,7 @@ Sub Button1_Click
 End Sub
 ```
 ## Demo
-Download/Clone [https://github.com/claudeamadu/Flutterwave-b4a/tree/main/Demo](https://github.com/claudeamadu/Flutterwave-b4a/tree/main/Demo)
+Download/Clone [https://github.com/claudeamadu/flutterwave-b4a/tree/main/Demo](https://github.com/claudeamadu/flutterwave-b4a/tree/main/Demo)
 <br/><img src="./phone0.jpeg" width="20%"></img> <img src="./phone1.jpeg" width="20%"></img> <img src="./phone2.jpeg" width="20%"></img> <img src="./phone3.jpeg" width="20%"> <img src="./phone4.jpg" width="20%"></img> 
 
 ## Security
@@ -59,7 +59,7 @@ If you discover any issues, please email obiriclaude@gmail.com.
 ## Contact
 
 For more enquiries and technical questions regarding the B4A Android FlutterwaveSdk, please post on 
-our issue tracker: [https://github.com/claudeamadu/Flutterwave-b4a/issues](https://github.com/claudeamadu/Flutterwave-b4a/issues).
+our issue tracker: [https://github.com/claudeamadu/flutterwave-b4a/issues](https://github.com/claudeamadu/flutterwave-b4a/issues).
 
 ## Change log
 
